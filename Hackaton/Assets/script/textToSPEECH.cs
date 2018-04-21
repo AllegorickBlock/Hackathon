@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SpeechLib; //DLL ajoutée
 
-public class TextToSpeech : MonoBehaviour
+public class textToSPEECH : MonoBehaviour
 {
     public SpVoice voice = new SpVoice();
 

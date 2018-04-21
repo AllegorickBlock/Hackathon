@@ -20,13 +20,7 @@ public class AnimationWithSpeak : MonoBehaviour
     [SerializeField] private Image âêîû;
     [SerializeField] private Image Ô;
     [SerializeField] private Image Nothing;
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         delay_Avant_Changer_Animation += Time.deltaTime;
