@@ -179,6 +179,9 @@ public class ExampleStreaming : MonoBehaviour
                 foreach (var alt in res.alternatives)
                 {
                     string text = string.Format("{0} \n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence); // recuperation des phrases 
+                    if (AnimationWithSpeak.textAParler == null) AnimationWithSpeak.textAParler = text;
+
+
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
                     ResultsField.text = text;
                 }

@@ -287,6 +287,7 @@
   <ItemGroup>
     <Compile Include="Assets\Prefabs\Scripts\InterfaceManager.cs" />
     <Compile Include="Assets\Prefabs\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\script\AnimationWithSpeak.cs" />
     <Compile Include="Assets\script\speeak.cs" />
     <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleAssistant.cs" />
     <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleCallback.cs" />
