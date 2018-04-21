@@ -5,6 +5,7 @@ using System.IO;
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
+using SpeechLib;
 
 
 public class Client : MonoBehaviour {
@@ -16,6 +17,7 @@ public class Client : MonoBehaviour {
     private NetworkStream stream;
     private StreamReader reader;
     private StreamWriter writer;
+    public SpVoice voice = new SpVoice(); // Permet d'instancier une voix d'utilisation d'interfac
 
     public void OnConnectedToServer()
     {
@@ -71,6 +73,7 @@ public class Client : MonoBehaviour {
     {
        GameObject go = Instantiate(messagePrefab, chatContainer.transform)as GameObject;
         go.GetComponentInChildren<Text>().text = data;
+        voice.Speak(data); // Rajout permettant decouter ce qui nous est envoyé
     }
 
     private void Send(string data)
