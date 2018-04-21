@@ -179,13 +179,11 @@ public class ExampleStreaming : MonoBehaviour
                 foreach (var alt in res.alternatives)
                 {
                     string text = string.Format("{0} \n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence); // recuperation des phrases 
-                    if (AnimationWithSpeak.textAParler == null) AnimationWithSpeak.textAParler = text;
-
-
+                    AnimationWithSpeak.textAParler = text;
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
                     ResultsField.text = text;
                 }
-//({1}, {2:0.00})
+                //({1}, {2:0.00})
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
                 {
                     foreach (var keyword in res.keywords_result.keyword)
@@ -199,7 +197,7 @@ public class ExampleStreaming : MonoBehaviour
                     foreach (var wordAlternative in res.word_alternatives)
                     {
                         Log.Debug("ExampleStreaming.OnRecognize()", "Word alternatives found. Start time: {0} | EndTime: {1}", wordAlternative.start_time, wordAlternative.end_time);
-                        foreach(var alternative in wordAlternative.alternatives)
+                        foreach (var alternative in wordAlternative.alternatives)
                             Log.Debug("ExampleStreaming.OnRecognize()", "\t word: {0} | confidence: {1}", alternative.word, alternative.confidence);
                     }
                 }
