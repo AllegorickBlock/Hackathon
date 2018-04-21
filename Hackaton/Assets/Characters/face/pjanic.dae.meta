@@ -20,12 +20,7 @@ ModelImporter:
     4300000: pjan
     9500000: //RootNode
     10800000: Lamp
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pjan
-    second: {fileID: 2100000, guid: d5f3a8bbf60ffc04fb6a16d3d69639ab, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
