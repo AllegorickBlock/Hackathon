@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InterfaceManager : MonoBehaviour {
 
@@ -14,6 +16,9 @@ public class InterfaceManager : MonoBehaviour {
     public GameObject GO_PauseMenu;
     private bool Affichage_PauseMenu = false;
 
+    public static InputField phraseToSay;
+    public InputField PhraseToSay;
+
     void Start()
     {
         person01.SetActive(false);
@@ -24,6 +29,8 @@ public class InterfaceManager : MonoBehaviour {
         person06.SetActive(false);
 
         GO_PauseMenu.SetActive(false);
+
+        phraseToSay = PhraseToSay;
 
         switch (MainMenu.characNmb)
         {
@@ -46,13 +53,14 @@ public class InterfaceManager : MonoBehaviour {
                 person06.SetActive(true);
                 break;
             default:
-                throw new System.Exception("Error");
+                break;
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("Escape"))
+        //if call pause menu
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseManager();
         }
@@ -70,6 +78,27 @@ public class InterfaceManager : MonoBehaviour {
         {
             GO_PauseMenu.SetActive(true);
         }
+    }
+    #endregion
+
+    #region public void LoadMainMenu()
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    #endregion
+
+    #region public void OptionWindow()
+    public void OptionWindow()
+    {
+
+    }
+    #endregion
+
+    #region public void QuitApp()
+    public void QuitApp()
+    {
+        Application.Quit();
     }
     #endregion
 }

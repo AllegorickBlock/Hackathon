@@ -3,38 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using SpeechLib;
 using UnityEngine.UI;
-
 using UnityEngine.Windows.Speech;
 
 public class textToSPEECH : MonoBehaviour
 {
     public UnityEngine.UI.Text texto;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             ButtonPress();
         }
-
     }
 
     public void ButtonPress()
     {
         SpVoice voice;
         voice = new SpVoice();
-        voice.Speak("salut");
+        texto.text = InterfaceManager.phraseToSay.text;
         voice.Speak(texto.text);
-
+        InterfaceManager.phraseToSay.text = "";
     }
-
-
 }
-
