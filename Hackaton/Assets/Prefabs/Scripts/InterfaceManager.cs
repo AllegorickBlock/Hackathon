@@ -32,6 +32,7 @@ public class InterfaceManager : MonoBehaviour {
 
         phraseToSay = PhraseToSay;
 
+        //Activation du character selectionner dans le main menu
         switch (MainMenu.characNmb)
         {
             case 1:

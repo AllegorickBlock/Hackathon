@@ -1,25 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SpeechLib;
-using UnityEngine.UI;
-using UnityEngine.Windows.Speech;
+using SpeechLib; //DLL ajoutée
 
-public class textToSPEECH : MonoBehaviour
+public class TextToSpeech : MonoBehaviour
 {
+    public SpVoice voice = new SpVoice();
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            ButtonPress();
+            voice.Speak(InterfaceManager.phraseToSay.text);
+            InterfaceManager.phraseToSay.text = "";
         }
-    }
-
-    public void ButtonPress()
-    {
-        SpVoice voice;
-        voice = new SpVoice();
-        voice.Speak(InterfaceManager.phraseToSay.text);
-        InterfaceManager.phraseToSay.text = "";
     }
 }

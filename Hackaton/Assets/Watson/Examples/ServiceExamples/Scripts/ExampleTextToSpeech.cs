@@ -34,7 +34,7 @@ public class ExampleTextToSpeech : MonoBehaviour
     private string _url;
     #endregion
 
-    TextToSpeech _textToSpeech;
+    IBM.Watson.DeveloperCloud.Services.TextToSpeech.v1.TextToSpeech _textToSpeech;
     string _testString = "<speak version=\"1.0\"><say-as interpret-as=\"letters\">I'm sorry</say-as>. <prosody pitch=\"150Hz\">This is Text to Speech!</prosody><express-as type=\"GoodNews\">I'm sorry. This is Text to Speech!</express-as></speak>";
 
     string _createdCustomizationId;
@@ -65,7 +65,7 @@ public class ExampleTextToSpeech : MonoBehaviour
         //  Create credential and instantiate service
         Credentials credentials = new Credentials(_username, _password, _url);
 
-        _textToSpeech = new TextToSpeech(credentials);
+        _textToSpeech = new IBM.Watson.DeveloperCloud.Services.TextToSpeech.v1.TextToSpeech(credentials);
 
         Runnable.Run(Examples());
     }
