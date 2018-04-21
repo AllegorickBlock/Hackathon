@@ -259,6 +259,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Interop.SpeechLib">
+      <HintPath>Assets/Interop.SpeechLib.dll</HintPath>
+    </Reference>
     <Reference Include="websocket-sharp">
       <HintPath>Assets/Watson/Plugins/websocket-sharp.dll</HintPath>
     </Reference>
@@ -288,7 +291,7 @@
     <Compile Include="Assets\Prefabs\Scripts\InterfaceManager.cs" />
     <Compile Include="Assets\Prefabs\Scripts\MainMenu.cs" />
     <Compile Include="Assets\script\AnimationWithSpeak.cs" />
-    <Compile Include="Assets\script\speeak.cs" />
+    <Compile Include="Assets\script\textToSPEECH.cs" />
     <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleAssistant.cs" />
     <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleCallback.cs" />
     <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleConversation.cs" />
