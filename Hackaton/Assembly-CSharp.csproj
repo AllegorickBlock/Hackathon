@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Scripts\InterfaceManager.cs" />
      <Compile Include="Assets\Prefabs\Scripts\MainMenu.cs" />
      <Compile Include="Assets\script\speeak.cs" />
      <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleAssistant.cs" />
