@@ -371,6 +371,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114963093131134398, guid: 732a1bf8df3e6834b8633b478bc18634,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764706505}
+    - target: {fileID: 114852961994032762, guid: 732a1bf8df3e6834b8633b478bc18634,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764706505}
+    - target: {fileID: 114621079766606012, guid: 732a1bf8df3e6834b8633b478bc18634,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764706505}
+    - target: {fileID: 114535940427192178, guid: 732a1bf8df3e6834b8633b478bc18634,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764706505}
+    - target: {fileID: 114531999943849970, guid: 732a1bf8df3e6834b8633b478bc18634,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764706505}
+    - target: {fileID: 114073600619833470, guid: 732a1bf8df3e6834b8633b478bc18634,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764706505}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 732a1bf8df3e6834b8633b478bc18634, type: 2}
   m_IsPrefabParent: 0
@@ -385,6 +415,7 @@ GameObject:
   - component: {fileID: 1764706503}
   - component: {fileID: 1764706502}
   - component: {fileID: 1764706501}
+  - component: {fileID: 1764706505}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -455,3 +486,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764706505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764706500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc931818c213b514db4f2a483e29a9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
