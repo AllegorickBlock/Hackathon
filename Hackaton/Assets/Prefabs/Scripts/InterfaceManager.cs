@@ -69,13 +69,14 @@ public class InterfaceManager : MonoBehaviour {
     #region private void PauseManager()
     private void PauseManager()
     {
-        Affichage_PauseMenu = !Affichage_PauseMenu;
         if (Affichage_PauseMenu)
         {
+            Affichage_PauseMenu = !Affichage_PauseMenu;
             GO_PauseMenu.SetActive(false);
         }
         else
         {
+            Affichage_PauseMenu = !Affichage_PauseMenu;
             GO_PauseMenu.SetActive(true);
         }
     }

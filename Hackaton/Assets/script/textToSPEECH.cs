@@ -7,8 +7,6 @@ using UnityEngine.Windows.Speech;
 
 public class textToSPEECH : MonoBehaviour
 {
-    public UnityEngine.UI.Text texto;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -21,8 +19,7 @@ public class textToSPEECH : MonoBehaviour
     {
         SpVoice voice;
         voice = new SpVoice();
-        texto.text = InterfaceManager.phraseToSay.text;
-        voice.Speak(texto.text);
+        voice.Speak(InterfaceManager.phraseToSay.text);
         InterfaceManager.phraseToSay.text = "";
     }
 }
