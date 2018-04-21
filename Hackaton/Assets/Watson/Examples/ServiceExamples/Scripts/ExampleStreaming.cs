@@ -65,6 +65,7 @@ public class ExampleStreaming : MonoBehaviour
         {
             if (value && !_speechToText.IsListening)
             {
+
                 _speechToText.DetectSilence = true;
                 _speechToText.EnableWordConfidence = true;
                 _speechToText.EnableTimestamps = true;
@@ -182,8 +183,10 @@ public class ExampleStreaming : MonoBehaviour
                     AnimationWithSpeak.textAParler = text;
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
                     ResultsField.text = text;
+                    AnimationWithSpeak.PeutParler = true;
                 }
                 //({1}, {2:0.00})
+                AnimationWithSpeak.PeutParler = false;
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
                 {
                     foreach (var keyword in res.keywords_result.keyword)

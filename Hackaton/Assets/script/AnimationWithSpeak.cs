@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class AnimationWithSpeak : MonoBehaviour
 {
+    static public bool PeutParler = true;
     static public int indice = 0;
     static public string textAParler = null;
     private char actuel_caractère;
@@ -21,35 +22,43 @@ public class AnimationWithSpeak : MonoBehaviour
     [SerializeField] private Image Ô;
     [SerializeField] private Image Nothing;
 
+    private void Start()
+    {
+        indice = 0;
+        delay_Avant_Changer_Animation = 0f;
+        textAParler = null;
+    }
     void Update()
     {
         delay_Avant_Changer_Animation += Time.deltaTime;
-
-        if ( (indice < textAParler.Length && delay_Avant_Changer_Animation >= 0.1f))
+        if (textAParler != null)
         {
-            actuel_caractère = textAParler[indice];
-            indice++;
-
-            delay_Avant_Changer_Animation = 0;
-            switch (actuel_caractère)
+            if ((indice < textAParler.Length && delay_Avant_Changer_Animation >= 0.1f) || PeutParler == true)
             {
-                case 'f': case 'v': gestion_Animation_en_fonction_des_sons(fv: true); break;
-                case 'e': gestion_Animation_en_fonction_des_sons(e: true); break;
-                case 'k': case 'g': case 'h': gestion_Animation_en_fonction_des_sons(kgh: true); break;
-                case 'l': gestion_Animation_en_fonction_des_sons(l: true); break;
-                case 'm': case 'b': case 'p': gestion_Animation_en_fonction_des_sons(mbp: true); break;
-                case 'o': gestion_Animation_en_fonction_des_sons(o: true); break;
-                case 'r': gestion_Animation_en_fonction_des_sons(r: true); break;
-                case 's': case 'c': case 'z': case 'd': case 'n': case 'j': gestion_Animation_en_fonction_des_sons(scz: true); break;
-                case 't': gestion_Animation_en_fonction_des_sons(th: true); break;
-                case 'a': case 'i': case 'u': gestion_Animation_en_fonction_des_sons(th: true); break;
-                default: gestion_Animation_en_fonction_des_sons(nothing: true); break;
+                actuel_caractère = textAParler[indice];
+                indice++;
+
+                delay_Avant_Changer_Animation = 0;
+                switch (actuel_caractère)
+                {
+                    case 'f': case 'v': gestion_Animation_en_fonction_des_sons(fv: true); break;
+                    case 'e': gestion_Animation_en_fonction_des_sons(e: true); break;
+                    case 'k': case 'g': case 'h': gestion_Animation_en_fonction_des_sons(kgh: true); break;
+                    case 'l': gestion_Animation_en_fonction_des_sons(l: true); break;
+                    case 'm': case 'b': case 'p': gestion_Animation_en_fonction_des_sons(mbp: true); break;
+                    case 'o': gestion_Animation_en_fonction_des_sons(o: true); break;
+                    case 'r': gestion_Animation_en_fonction_des_sons(r: true); break;
+                    case 's': case 'c': case 'z': case 'd': case 'n': case 'j': gestion_Animation_en_fonction_des_sons(scz: true); break;
+                    case 't': gestion_Animation_en_fonction_des_sons(th: true); break;
+                    case 'a': case 'i': case 'u': gestion_Animation_en_fonction_des_sons(th: true); break;
+                    default: gestion_Animation_en_fonction_des_sons(nothing: true); break;
+                }
             }
-        }
-        else if (delay_Avant_Changer_Animation >= 10)
-        {
-            gestion_Animation_en_fonction_des_sons(nothing: true);
-            indice = 0;
+            else if (delay_Avant_Changer_Animation >= 10)
+            {
+                gestion_Animation_en_fonction_des_sons(nothing: true);
+                if (PeutParler == false) indice = 0;
+            }
         }
     }
 
