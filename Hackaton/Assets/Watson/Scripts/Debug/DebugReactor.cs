@@ -47,6 +47,7 @@ namespace IBM.Watson.DeveloperCloud.Debug
         /// Process a LogRecord object.
         /// </summary>
         /// <param name="log">The log record.</param>
+
         public void ProcessLog(LogRecord log)
         {
             if (log._level >= Level)
