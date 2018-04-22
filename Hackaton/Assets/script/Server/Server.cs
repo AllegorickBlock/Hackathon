@@ -107,7 +107,7 @@ public class Server : MonoBehaviour
         clients.Add(new ServerClient(listener.EndAcceptTcpClient(ar)));
         StartListening();
 
-        Broadcast(clients[clients.Count-1]+" s'est connecté sur le serveur",clients); 
+        Broadcast("Paul s'est connecté sur le serveur",clients); 
     }
 
     private void OnIncomingData(ServerClient c,string data)
