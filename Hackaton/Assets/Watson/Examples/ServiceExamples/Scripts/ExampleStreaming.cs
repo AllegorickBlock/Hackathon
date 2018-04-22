@@ -180,13 +180,13 @@ public class ExampleStreaming : MonoBehaviour
                 foreach (var alt in res.alternatives)
                 {
                     string text = string.Format("{0} \n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence); // recuperation des phrases 
-                    AnimationWithSpeak.textAParler = text;
+                   // AnimationWithSpeak.textAParler = text;
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
                     ResultsField.text = text;
-                    AnimationWithSpeak.PeutParler = true;
+                    //AnimationWithSpeak.PeutParler = true;
                 }
                 //({1}, {2:0.00})
-                AnimationWithSpeak.PeutParler = false;
+               // AnimationWithSpeak.PeutParler = false;
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
                 {
                     foreach (var keyword in res.keywords_result.keyword)

@@ -64,18 +64,23 @@ public class Client : MonoBehaviour {
             {
                 string data = reader.ReadLine();
                 if (data != null)
+                {
                     OnIncomingData(data);
+                    voice.Speak(data, SpeechVoiceSpeakFlags.SVSFlagsAsync); // Rajout permettant decouter ce qui nous est envoyé, le flag en deuxiemme partie permet de jouer le son de maniere asynchrone, et empechant ainsi de bloquer tout le code
+                }
             }
         }
     }
 
     private void OnIncomingData(string data)
     {
-       GameObject go = Instantiate(messagePrefab, chatContainer.transform)as GameObject;
+        AnimationWithSpeak.peutParler = true;
+        AnimationWithSpeak.indice = 0;
+        AnimationWithSpeak.textAParler = data;
+        GameObject go = Instantiate(messagePrefab, chatContainer.transform)as GameObject;
         go.GetComponentInChildren<Text>().text = data;
-        voice.Speak(data); // Rajout permettant decouter ce qui nous est envoyé
+       
     }
-
     private void Send(string data)
     {
         if (!socketReady)
@@ -88,7 +93,13 @@ public class Client : MonoBehaviour {
 
     public void OnSendButton()
     {
-        string message = GameObject.Find("SendInput").GetComponent<InputField>().text;
-        Send(message);
+        if (GameObject.Find("SendInput").GetComponent<InputField>().text != string.Empty)
+        {
+            string message = GameObject.Find("SendInput").GetComponent<InputField>().text;
+            Send(message);
+        }
+        GameObject.Find("SendInput").GetComponent<InputField>().text = string.Empty;
     }
+
+
 }
