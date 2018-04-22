@@ -132,7 +132,7 @@ b182c738cb41266071cee15896272679 Assembly-CSharp.dll:.ExampleStreamingSplitSampl
 77e3be1af21c5f54c176768670f29a61 Assembly-CSharp.dll:.ExampleToneAnalyzer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu
 113355ed8b36587f350716a27fcf5a0c Assembly-CSharp.dll:.ExampleVisualRecognition
-d1f3f405e3292d7231a6f6c0b6359ffd Assembly-CSharp.dll:.AnimationWithSpeak
+f823a55f3843f895fe4163a2f4c8e666 Assembly-CSharp.dll:.AnimationWithSpeak
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:IBM.Watson.DeveloperCloud.Utilities.Runnable
 77e3be1af21c5f54c176768670f29a61 Assembly-CSharp.dll:.ExamplePersonalityInsights
 16b5a19e8f6f7fa00f8424d6383dfb99 Assembly-CSharp.dll:IBM.Watson.DeveloperCloud.Examples.ExampleCallback

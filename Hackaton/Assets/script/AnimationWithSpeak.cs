@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class AnimationWithSpeak : MonoBehaviour
 {
     [SerializeField] private GameObject serveur;
+    [SerializeField] private Text envoiDesDonnée;
     static public bool peutParler = false;
     static public int indice = 0;
     static public string textAParler = null;
@@ -34,6 +35,7 @@ public class AnimationWithSpeak : MonoBehaviour
         if (serveur.GetComponent<Server>().enabled == false)
         {
             delay_Avant_Changer_Animation += Time.deltaTime;
+            if (envoiDesDonnée.enabled == true) envoiDesDonnée.enabled = false;
 
             if (textAParler != null)
             {
@@ -80,6 +82,7 @@ public class AnimationWithSpeak : MonoBehaviour
             âêîû.enabled = false;
             Ô.enabled = false;
             Nothing.enabled = false;
+           if(envoiDesDonnée.enabled == false) envoiDesDonnée.enabled = true;
         }
     }
 

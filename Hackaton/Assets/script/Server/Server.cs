@@ -35,8 +35,18 @@ public class Server : MonoBehaviour
         }
     }
 
+    public void SendMessageButton()
+    {
+        Client.OnSendButton();
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Client.OnSendButton();
+        }
+
         if (!serverStarted)
             return;
 
@@ -97,7 +107,7 @@ public class Server : MonoBehaviour
         clients.Add(new ServerClient(listener.EndAcceptTcpClient(ar)));
         StartListening();
 
-        Broadcast(clients[clients.Count-1]+"has connected",clients); 
+        Broadcast(clients[clients.Count-1]+" s'est connecté sur le serveur",clients); 
     }
 
     private void OnIncomingData(ServerClient c,string data)
@@ -133,7 +143,7 @@ public class ServerClient
 
     public ServerClient(TcpClient clientSocket)
     {
-        clientName = "Quest";
+        clientName = "Paul";
         tcp = clientSocket;
     }
 }

@@ -12,12 +12,12 @@ public class Client : MonoBehaviour {
 
     public GameObject chatContainer;
     public GameObject messagePrefab;
-    private bool socketReady;
-    private TcpClient socket;
-    private NetworkStream stream;
-    private StreamReader reader;
-    private StreamWriter writer;
-    public SpVoice voice = new SpVoice(); // Permet d'instancier une voix d'utilisation d'interfac
+    static public bool socketReady;
+    static public TcpClient socket;
+    static public NetworkStream stream;
+    static public StreamReader reader;
+    static public StreamWriter writer;
+    static public SpVoice voice = new SpVoice(); // Permet d'instancier une voix d'utilisation d'interfac
 
     public void OnConnectedToServer()
     {
@@ -60,7 +60,8 @@ public class Client : MonoBehaviour {
     {
         if (socketReady)
         {
-            if (stream.DataAvailable)
+            
+            if (stream.DataAvailable) // Permet d'appuyer sur enter pour envoyer une donnée
             {
                 string data = reader.ReadLine();
                 if (data != null)
@@ -71,17 +72,21 @@ public class Client : MonoBehaviour {
             }
         }
     }
-
+    int indice = 0;
     private void OnIncomingData(string data)
     {
         AnimationWithSpeak.peutParler = true;
         AnimationWithSpeak.indice = 0;
         AnimationWithSpeak.textAParler = data;
         GameObject go = Instantiate(messagePrefab, chatContainer.transform)as GameObject;
+        
+        if(indice > 9)Destroy(go, 300);
+        else indice++;
+
         go.GetComponentInChildren<Text>().text = data;
        
     }
-    private void Send(string data)
+    static private void Send(string data)
     {
         if (!socketReady)
         {
@@ -91,7 +96,7 @@ public class Client : MonoBehaviour {
         writer.Flush();
     }
 
-    public void OnSendButton()
+    static public void OnSendButton()
     {
         if (GameObject.Find("SendInput").GetComponent<InputField>().text != string.Empty)
         {
