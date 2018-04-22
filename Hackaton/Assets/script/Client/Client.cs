@@ -80,8 +80,8 @@ public class Client : MonoBehaviour {
         AnimationWithSpeak.textAParler = data;
         GameObject go = Instantiate(messagePrefab, chatContainer.transform)as GameObject;
         
-        if(indice > 9)Destroy(go, 300);
-        else indice++;
+        /*if(indice > 9)*/Destroy(go, 10);
+        //else indice++;
 
         go.GetComponentInChildren<Text>().text = data;
        
